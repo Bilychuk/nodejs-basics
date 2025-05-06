@@ -1,3 +1,9 @@
-const message = "Hello Node";
+import { initMongoDB } from './db/initMongoDB.js';
+import { startServer } from './server.js';
 
-console.log(message);
+const bootstrap = async () => {
+  await initMongoDB();
+  startServer();
+};
+
+bootstrap();
